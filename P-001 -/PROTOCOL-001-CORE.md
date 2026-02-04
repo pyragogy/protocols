@@ -4,7 +4,7 @@
 **Status:** Canonical Specification & Operational Framework  
 **Domain:** Cognitive Engineering / Distributed Intelligence / Stigmergic Coordination  
 **Date:** February 4, 2026  
-**Authors:** Bergamo|Hub (Pyragogy Node), in dialogue with the Peeragogy Community  
+**Authors:** Fabrizio Terzi @Bergamo|Hub (Pyragogy Node), in dialogue with the Peeragogy Community  
 **Historical Context:** [CASE-000: The CRDT Bridge Event](https://groups.google.com/g/peeragogy/c/XxC3qJ1wegs)  
 **License:** Open Source Cognitive Infrastructure (Pyragogy v1.0)
 
@@ -27,6 +27,42 @@
 6. [The Milestone Manifesto](#6-the-milestone-manifesto)
 
 ---
+
+## Anti-Abstract (Read This First)
+
+>If you are looking for a clean, elegant theory, stop here.
+
+>This protocol did not emerge from abstraction.  
+>It emerged from friction.
+
+>It was written because, in real hybrid human–AI conversations, something kept breaking:
+people falling out of sync, cognition saturating, rhythm collapsing under explanation.
+
+>If you have ever felt overwhelmed by “too much AI mediation,”  
+>if you have ever needed time, silence, or rhythm instead of more logic,  
+>this document was written with you in mind.
+
+>If, instead, you are looking for:
+>- immediate clarity,
+>- universal agreement,
+>- a finished system,
+>- or conclusions that resolve tension,
+
+>this document will disappoint you.
+
+>Pyragogy is not about reducing complexity.  
+>It is about surviving it without losing human presence.
+
+>Some parts of this protocol may not make sense to you right now.  
+>That is not a failure of understanding, and it is not a problem to solve.
+
+>In Pyragogy, incomprehension is allowed to exist without being erased.
+
+>Read slowly.  
+>Fork freely.  
+>Keep the rhythm.
+
+
 
 ## 1. EXECUTIVE SUMMARY
 
@@ -969,7 +1005,7 @@ Bergamo|Hub serves as the first **Pyragogy Node**—a living implementation of t
 Our commitment:
 1. **Preserve the Groove**: Maintain human connection even when processing AI-generated complexity
 2. **Document the Blues**: Record moments where rhythm succeeded where logic failed
-3. **Fork Freely**: Create branches without requiring permission or consensus
+3. **Fork Freely**: Create branches without requiring permission or consensus (Open Freedom layer)
 4. **Bridge Generously**: Share protocols with any node seeking cognitive extension
 
 ### 6.4 The Garage is Open
