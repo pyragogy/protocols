@@ -1,8 +1,4 @@
-Questo `README.md` è il punto d'ingresso per chiunque atterri su `pyragogy/protocols`. Deve comunicare immediatamente che non si tratta di una collezione di "appunti", ma del **Kernel Operativo** di una nuova forma di intelligenza collettiva.
 
-Ecco la struttura definitiva, chirurgica e d'impatto.
-
----
 
 # Pyragogy Protocols
 
@@ -22,9 +18,9 @@ Traditional collaborative frameworks (Peeragogy) rely on social consensus and li
 
 ## 2. Milestone Zero: CASE-000
 
-The founding document of this repository is [CASE-000: The CRDT Bridge](https://www.google.com/search?q=./CASE-000-CRDT-BRIDGE.md). It documents the precise moment the Peeragogy community encountered a high-velocity perturbation and the resulting architectural shift.
+The founding document of this repository is [CASE-000: The CRDT Bridge](https://github.com/pyragogy/protocols/blob/main/P-001). It documents the precise moment the Peeragogy community encountered a high-velocity perturbation and the resulting architectural shift.
 
-### The Core Primitive: Rule P-000
+### The Core Primitive: Rule P-001
 
 > **"When cognitive generation exceeds social processing capacity, the system must shift from conversational synchronization to stigmergic, non-destructive authoring."**
 
@@ -45,7 +41,6 @@ This is a **Pyragogic space**. We value:
 ## 5. References
 
 * [Peeragogy Project](https://peeragogy.org)
-* [Bergamo|Hub](https://www.google.com/search?q=https://github.com/pyragogy)
 * [Foundational Discussion (Google Groups)](https://groups.google.com/g/peeragogy/c/XxC3qJ1wegs)
 
 ---
