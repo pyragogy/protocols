@@ -1,4 +1,4 @@
-## A Generative Theory of Cognitive Morphogenesis in Distributed Intelligence Systems
+## A Technical Specification for Cognitive Morphogenesis in Distributed Intelligence Systems
 
 **Version:** 1.0.0 — *Blues Protocol*  
 **Status:** Canonical Specification & Operational Framework  
@@ -29,53 +29,9 @@
 ---
 
 ## Anti-Abstract — Read This First
-
-*If you are looking for a neat theory that ties everything together,  
-this may not be the right place.*
-
-*This text didn’t begin as an idea.  
-It began as a moment where something felt off.*
-
-*In real conversations between humans and AI,  
-the words kept coming, the logic kept growing,  
-and at some point the rhythm was lost.*
-
-*Someone needed space.  
-Someone needed time.  
-Someone needed less explanation, not more.*
-
-*This protocol exists because of that moment.*
-
-*If you’ve ever felt overwhelmed by too much mediation,  
-if you’ve ever wanted silence, or distance, or a slower tempo,  
-you are not alone here.*
-
-*This is not a document that promises clarity.  
-It doesn’t try to settle things or smooth out every tension.*
-
-*Some parts may not make sense to you.  
-They might not make sense for a long time.  
-That’s okay.*
-
-*In Pyragogy, not understanding is not a failure.  
-It’s a place you’re allowed to stand.*
-
-*You don’t have to read this all at once.  
-You don’t have to follow every line.  
-You don’t have to agree.*
-
-*Come in.  
-Step out.  
-Come back when it feels right.*
-
-*Read slowly.  
-Leave your own traces.  
-And when the words get heavy—*
+This protocol did not emerge from abstraction. It emerged from friction. It codifies the moment where human-AI collaboration reaches its breaking point and provides a non-destructive path forward. It is the architecture of the "Garage."
 
 *keep the rhythm.*
-
-
-
 
 
 ## 1. EXECUTIVE SUMMARY
