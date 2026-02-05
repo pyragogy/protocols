@@ -980,17 +980,8 @@ System State:", json.dumps(engine.get_system_state(), indent=2))
 
 ---
 
-## 6. THE MILESTONE MANIFESTO
 
-### 6.1 Declaration of Transition
-
-This document marks the formal transition from **Peeragogy** to **Pyragogy**—not as abandonment, but as morphogenetic extension.
-
-**Peeragogy** gave us patterns for peer learning: collaborative, synchronous, consensus-seeking. It built the foundation of distributed cognitive work.
-
-**Pyragogy** extends this foundation into territories that synchronous consensus cannot reach: high-velocity AI collaboration, asynchronous distributed collectives, systems where cognitive diversity necessarily creates impedance mismatches.
-
-### 6.2 Vision: Non-Commercial Intimate Cognitive Extension
+## 6 Vision: Non-Commercial Intimate Cognitive Extension
 
 Pyragogy is not a platform. It is not a service. It is not a product.
 
