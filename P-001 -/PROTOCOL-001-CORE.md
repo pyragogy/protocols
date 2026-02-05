@@ -304,7 +304,6 @@ We:
 
 
 ---
-
 graph TD
     %% Define Nodes
     Start((Interaction Start))
@@ -351,6 +350,7 @@ graph TD
     style Garage fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
     style Main fill:#bbf,stroke:#333,stroke-width:2px
     style CIM fill:#f66,stroke:#333,stroke-color:#fff
+---
 
 **Function**: Rhythmic synchronization when semantic bandwidth is saturated.
 
