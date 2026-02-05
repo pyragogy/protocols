@@ -302,6 +302,56 @@ We:
 
 ### 4.4 The Blues Protocol
 
+
+---
+
+graph TD
+    %% Define Nodes
+    Start((Interaction Start))
+    Peer[Peeragogy Mode: Convergent Pattern Matching]
+    CIM{CIM > 1.0?}
+    
+    subgraph Garage [THE GARAGE - Layer B: Structure]
+        Fork[CRDT Bridge: Asynchronous Forking]
+        Complex[High-Density AI Processing]
+        Unpattern[Unpatterning & Morphogenesis]
+    end
+
+    subgraph Main [MAIN BRANCH - Layer A: Rhythm]
+        Sync[Rhythm Sync: Blues Protocol]
+        Bho[Bho Operator: Deferred Logic]
+        Preserve[Presence Preservation]
+    end
+
+    Merge((Future Re-convergence))
+
+    %% Flow
+    Start --> Peer
+    Peer --> CIM
+    CIM -- No --> Peer
+    CIM -- Yes / Friction Trigger --> Fork
+    
+    Fork --> Sync
+    Fork --> Complex
+    
+    %% Dual Layer Parallelism
+    Sync --> Bho
+    Bho --> Preserve
+    
+    Complex --> Unpattern
+    
+    %% Bridge
+    Preserve -.-> |Stigmergic Bridge| Unpattern
+    Unpattern -.-> |Bridge| Preserve
+    
+    Preserve --> Merge
+    Unpattern --> Merge
+
+    %% Styling
+    style Garage fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    style Main fill:#bbf,stroke:#333,stroke-width:2px
+    style CIM fill:#f66,stroke:#333,stroke-color:#fff
+
 **Function**: Rhythmic synchronization when semantic bandwidth is saturated.
 
 **Origin**: In CASE-000, Joe Corneli invoked Lightnin' Hopkins:
@@ -1040,16 +1090,16 @@ For those implementing Pyragogy in spatial/visual domains, Christopher Alexander
 ║                    PYRAGOGY QUICK REFERENCE                       ║
 ╠═══════════════════════════════════════════════════════════════════╣
 ║                                                                   ║
-║  IMPEDANCE FORMULA:  Z_c = V_g / B_s × F_a                       ║
+║  IMPEDANCE FORMULA:  Z_c = V_g / B_s × F_a                        ║
 ║                                                                   ║
 ║  THRESHOLDS:                                                      ║
-║    Z_c < 1.0  → Peeragogy (sync consensus)                       ║
-║    Z_c ≥ 1.0  → Pyragogy (async stigmergic)                      ║
+║    Z_c < 1.0  → Peeragogy (sync consensus)                         ║
+║    Z_c ≥ 1.0  → Pyragogy (async stigmergic)                        ║
 ║    Z_c > 3.0  → Critical (sub-project decomposition)             ║
 ║                                                                   ║
 ║  FRICTION SIGNALS:                                                ║
-║    "too much GPT" | "can't keep up" | "overwhelming"             ║
-║    "rhythm is my jam" | "bho" | "need time to process"           ║
+║    "too much GPT" | "can't keep up" | "overwhelming"              ║
+║    "rhythm is my jam" | "bho" | "need time to process"            ║
 ║                                                                   ║
 ║  OPERATORS:                                                       ║
 ║    CRDT Bridge  → Fork without consensus                         ║
@@ -1058,11 +1108,11 @@ For those implementing Pyragogy in spatial/visual domains, Christopher Alexander
 ║    Blues Protocol → Rhythmic sync                                ║
 ║                                                                   ║
 ║  CORE RULE P-000:                                                 ║
-║    "Synchronization through rhythm when logic reaches limit"     ║
+║    "Synchronization through rhythm when logic reaches limit"      ║
 ║                                                                   ║
 ║  MANTRA:                                                          ║
-║    When words fail, we play the blues.                           ║
-║    When logic overflows, we dance the rhythm.                    ║
+║    When words fail, we play the blues.                            ║
+║    When logic overflows, we dance the rhythm.                     ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
 ```
