@@ -240,7 +240,6 @@ When $Z_c$ exceeds unity, $\omega$ increases dramatically, driving rapid phase r
 
 ## 4.1.1 Visual Representation: The Pyragogic Fork
 
-```mermaid
 graph LR
     %% 1. THE STATUS QUO
     Start((START)) --> Peer[Peeragogy Mode]
