@@ -240,14 +240,15 @@ When $Z_c$ exceeds unity, $\omega$ increases dramatically, driving rapid phase r
 
 ## 4.1.1 Visual Representation: The Pyragogic Fork
 
+```mermaid
 graph LR
     %% 1. THE STATUS QUO
     Start((START)) --> Peer[Peeragogy Mode]
     Peer --> Check{⚡ CIM > 1.0?}
 
     %% 2. THE TRIGGER
-    Check -->|"Flow OK"| Peer
-    Check -->|"OVERLOAD"| Split((FORK))
+    Check -->|Flow OK| Peer
+    Check -->|OVERLOAD| Split((FORK))
 
     %% 3. THE DUAL LAYER (PARALLEL TRACKS)
     subgraph LAYER_A [Layer A: RHYTHM - The Human Line]
@@ -266,17 +267,8 @@ graph LR
 
     %% 4. THE BRIDGES
     Presence <--> |Async Bridge| CRDT
+```
 
-    %% STYLING
-    classDef plain fill:#fff,stroke:#333,stroke-width:1px;
-    classDef alert fill:#ffcccc,stroke:#f00,stroke-width:2px;
-    classDef rhythm fill:#d0f0c0,stroke:#333,stroke-width:2px;
-    classDef struct fill:#e0e0ff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
-
-    class Check alert;
-    class Blues,Bho,Presence rhythm;
-    class Garage,AI,CRDT struct;
-    class Peer plain;
 
 ### 4.2 The Unpattern
 
