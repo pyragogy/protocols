@@ -238,6 +238,47 @@ When $Z_c$ exceeds unity, $\omega$ increases dramatically, driving rapid phase r
 
 **Key Principle**: Unlike code branches, cognitive branches represent **parallel explorations of idea space**. Multiple branches can coexist indefinitely—merge only when natural semantic attraction emerges.
 
+## 4.1.1 Visual Representation: The Pyragogic Fork
+
+```mermaid
+graph LR
+    %% 1. THE STATUS QUO
+    Start((START)) --> Peer[Peeragogy Mode]
+    Peer --> Check{⚡ CIM > 1.0?}
+
+    %% 2. THE TRIGGER
+    Check -->|"Flow OK"| Peer
+    Check -->|"OVERLOAD"| Split((FORK))
+
+    %% 3. THE DUAL LAYER (PARALLEL TRACKS)
+    subgraph LAYER_A [Layer A: RHYTHM - The Human Line]
+        direction LR
+        Split ==> Blues[Blues Protocol]
+        Blues --> Bho[Bho Operator]
+        Bho --> Presence[Human Presence]
+    end
+
+    subgraph LAYER_B [Layer B: STRUCTURE - The Garage]
+        direction LR
+        Split -.-> Garage[The Garage]
+        Garage --> AI[AI & Deep Structure]
+        AI --> CRDT[CRDT Logic]
+    end
+
+    %% 4. THE BRIDGES
+    Presence <--> |Async Bridge| CRDT
+
+    %% STYLING
+    classDef plain fill:#fff,stroke:#333,stroke-width:1px;
+    classDef alert fill:#ffcccc,stroke:#f00,stroke-width:2px;
+    classDef rhythm fill:#d0f0c0,stroke:#333,stroke-width:2px;
+    classDef struct fill:#e0e0ff,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+
+    class Check alert;
+    class Blues,Bho,Presence rhythm;
+    class Garage,AI,CRDT struct;
+    class Peer plain;
+
 ### 4.2 The Unpattern
 
 An **Unpattern** is a structured perturbation designed to prevent premature convergence.
@@ -303,54 +344,6 @@ We:
 ### 4.4 The Blues Protocol
 
 
----
-graph TD
-    %% Define Nodes
-    Start((Interaction Start))
-    Peer[Peeragogy Mode: Convergent Pattern Matching]
-    CIM{CIM > 1.0?}
-    
-    subgraph Garage [THE GARAGE - Layer B: Structure]
-        Fork[CRDT Bridge: Asynchronous Forking]
-        Complex[High-Density AI Processing]
-        Unpattern[Unpatterning & Morphogenesis]
-    end
-
-    subgraph Main [MAIN BRANCH - Layer A: Rhythm]
-        Sync[Rhythm Sync: Blues Protocol]
-        Bho[Bho Operator: Deferred Logic]
-        Preserve[Presence Preservation]
-    end
-
-    Merge((Future Re-convergence))
-
-    %% Flow
-    Start --> Peer
-    Peer --> CIM
-    CIM -- No --> Peer
-    CIM -- Yes / Friction Trigger --> Fork
-    
-    Fork --> Sync
-    Fork --> Complex
-    
-    %% Dual Layer Parallelism
-    Sync --> Bho
-    Bho --> Preserve
-    
-    Complex --> Unpattern
-    
-    %% Bridge
-    Preserve -.-> |Stigmergic Bridge| Unpattern
-    Unpattern -.-> |Bridge| Preserve
-    
-    Preserve --> Merge
-    Unpattern --> Merge
-
-    %% Styling
-    style Garage fill:#f9f,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
-    style Main fill:#bbf,stroke:#333,stroke-width:2px
-    style CIM fill:#f66,stroke:#333,stroke-color:#fff
----
 
 **Function**: Rhythmic synchronization when semantic bandwidth is saturated.
 
