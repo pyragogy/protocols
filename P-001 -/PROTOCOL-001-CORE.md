@@ -54,29 +54,28 @@ Think of it like electrical impedance. When you plug a high-power device into a 
 
 ### The Mathematics of Overload
 
-```mermaid
-graph LR
-    A[Information<br/>Generated] -->|÷| B{Cognitive<br/>Impedance<br/>Zc}
-    C[Team Processing<br/>Capacity] -->|÷| B
-    
-    B -->|Zc < 0.7| D[Green Zone<br/>Healthy]
-    B -->|Zc 0.7-0.9| E[Yellow Zone<br/>Caution]
-    B -->|Zc ≥ 1.0| F[Red Zone<br/>Overload]
-    
-    style D fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style E fill:#fff9c4,stroke:#f9a825,stroke-width:2px
-    style F fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style B fill:#e3f2fd,stroke:#1565c0,stroke-width:3px
-```
+**The Cognitive Impedance Formula:**
 
-The relationship is surprisingly simple:
-
-$$Z_c = \frac{V_{generation}}{B_{social}}$$
+$Z_c = \frac{V_{generation}}{B_{social}}$
 
 Where:
 - **Zc** = Cognitive Impedance (system stress level)
 - **V_generation** = Velocity of information entering the system
 - **B_social** = Team's actual capacity to process and integrate
+
+**Visual Representation:**
+
+```
+Information Generated (V_gen)
+        ÷
+Team Processing Capacity (B_social)
+        =
+Cognitive Impedance (Zc)
+
+If Zc < 0.7  → GREEN ZONE (Healthy)
+If Zc 0.7-0.9 → YELLOW ZONE (Caution)  
+If Zc ≥ 1.0  → RED ZONE (Overload)
+```
 
 ### The Three Zones
 
@@ -87,26 +86,6 @@ Where:
 | **Red** | ≥ 1.0 | Overload | Drowning, backlog growing | BLUES (mandatory) |
 
 ### How to Recognize CIM in Your Team
-
-```mermaid
-mindmap
-  root((CIM<br/>Symptoms))
-    Communication
-      Fire hose feeling
-      Apologizing for being behind
-      Buried threads
-      "Can someone summarize?"
-    Decisions
-      Same topic 3+ times
-      "Let's continue async"
-      Avoiding decisions
-      Quiet reversals
-    Social
-      Night/weekend work to catch up
-      Junior members stop asking
-      Sub-channels proliferate
-      Exhaustion despite less shipping
-```
 
 **Communication Symptoms:**
 - Your primary channel feels like a fire hose
@@ -136,23 +115,22 @@ If you're nodding your head, you have CIM. The question is: what do you do about
 
 Most teams respond to overload in predictable, destructive ways:
 
-```mermaid
-graph TD
-    Problem[Team Overload] --> Response1[More Meetings]
-    Problem --> Response2[New Tools]
-    Problem --> Response3[Work Harder]
-    
-    Response1 --> Result1[Higher sync cost<br/>Less work time<br/>WORSE]
-    Response2 --> Result2[Same overload<br/>Different interface<br/>NO CHANGE]
-    Response3 --> Result3[2 weeks of push<br/>Then burnout<br/>COLLAPSE]
-    
-    style Problem fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Result1 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Result2 fill:#ffe0b2,stroke:#e65100,stroke-width:2px
-    style Result3 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-```
+**❌ Response 1: More Meetings**
+- Increases synchronization cost
+- Decreases time for actual work
+- **Result:** Higher cognitive load, worse performance
 
-None address the root cause: **you're using a fixed collaboration topology for a variable cognitive load.**
+**❌ Response 2: New Tools**
+- Changes the interface, not the problem
+- Same overload, different platform
+- **Result:** No improvement, just adaptation fatigue
+
+**❌ Response 3: "Work Harder"**
+- Pushes through for ~2 weeks
+- Then burnout hits hard
+- **Result:** Productivity collapse, team damage
+
+**None address the root cause:** You're using a fixed collaboration topology for a variable cognitive load.
 
 ### The Core Insight
 
@@ -197,24 +175,11 @@ Think of a university library during finals week. Everyone's present. The room h
 
 #### When to Use This Mode
 
-```mermaid
-flowchart LR
-    Check{Check Conditions}
-    Check -->|✓| C1[Zc < 0.7]
-    Check -->|✓| C2[Independent<br/>work streams]
-    Check -->|✓| C3[Exploration<br/>phase]
-    
-    C1 --> Use[USE<br/>STUDY HALL]
-    C2 --> Use
-    C3 --> Use
-    
-    style Use fill:#e8eaf6,stroke:#3949ab,stroke-width:2px
-```
-
-- Default state for healthy impedance (Zc < 0.7)
-- Team members have clear, independent work streams
-- Exploration phase before convergence
-- Deep work is primary need
+**Use Study Hall when:**
+- ✅ Zc < 0.7 (cognitive load is manageable)
+- ✅ Team members have clear, independent work streams
+- ✅ You're in exploration phase before convergence
+- ✅ Deep work is the primary need
 
 #### Operating Principles
 
@@ -255,49 +220,32 @@ GUSH is forced convergence. It's when you take asynchronous exploration and coll
 
 #### When to Use This Mode
 
-```mermaid
-flowchart TD
-    Start{Decision Needed?}
-    Start -->|Yes| Check1{Zc < 0.7?}
-    Check1 -->|No| Reject[❌ DON'T GUSH<br/>Use BLUES instead]
-    Check1 -->|Yes| Check2{Can pre-work<br/>be done?}
-    Check2 -->|No| Reject2[❌ DON'T GUSH<br/>Fix trust first]
-    Check2 -->|Yes| Check3{Multiple<br/>stakeholders?}
-    Check3 -->|Yes| Use[✓ USE GUSH]
-    Check3 -->|No| Alt[Consider<br/>delegation instead]
-    
-    style Use fill:#e1f5fe,stroke:#0277bd,stroke-width:3px
-    style Reject fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Reject2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-```
+**Decision Tree for GUSH:**
 
-**Use GUSH when:**
-- Decision cannot be delayed or delegated
-- Multiple stakeholders must align
-- Decision has dependencies affecting others' work
-- Cognitive impedance is low (Zc < 0.7)
+1. **Do you need a decision?** → If NO, use Study Hall
+2. **Is Zc < 0.7?** → If NO, don't GUSH (use BLUES instead)
+3. **Can team do pre-work?** → If NO, fix trust first
+4. **Multiple stakeholders needed?** → If NO, consider delegation
+5. **All YES?** → Use GUSH
 
-**Critical:** Never GUSH in high impedance. If your team is overloaded, synchronous meetings make it worse. You need Mode C.
+**Critical Rules:**
+- ✅ Use when: Low impedance + urgent decision + multiple stakeholders
+- ❌ Never GUSH when: High impedance (Zc ≥ 1.0) - use BLUES instead
+- ⚠️ Warning: If team can't respect pre-work, you have a trust problem, not a decision problem
 
 #### The GUSH Protocol
 
-```mermaid
-gantt
-    title GUSH Session Timeline (45 min max)
-    dateFormat mm
-    axisFormat %M min
-    
-    section Preparation
-    Materials shared (24h before)   :done, prep1, 00, 1m
-    Team confirms pre-work complete :done, prep2, 00, 1m
-    
-    section Session
-    Context refresh             :active, s1, 00, 5m
-    AI synthesis presentation   :active, s2, 05, 5m
-    Structured discussion       :active, s3, 10, 25m
-    Decision point             :crit, s4, 35, 5m
-    AI documentation           :crit, s5, 40, 5m
-```
+**Session Timeline (45 minutes maximum):**
+
+| Time | Phase | Purpose |
+|:-----|:------|:--------|
+| **Pre-Session** | Materials shared 24-48h before | All context provided in advance |
+| | Team confirms pre-work complete | No one shows up unprepared |
+| **0-5 min** | Context Refresh | Quick review (already read) |
+| **5-10 min** | AI Synthesis | Present options, agreements, disagreements |
+| **10-35 min** | Structured Discussion | Clarify, surface concerns, test assumptions |
+| **35-40 min** | Decision Point | Commit to X, not Y or Z, with reasoning |
+| **40-45 min** | Documentation | AI generates decision doc in real-time |
 
 **Pre-Session (24-48h before):**
 
@@ -346,42 +294,27 @@ BLUES is what you do when the system is overloaded. When cognitive impedance is 
 
 #### When to Use This Mode (MANDATORY Triggers)
 
-```mermaid
-graph TD
-    Trigger1[Zc ≥ 1.0] --> BLUES[SWITCH TO<br/>BLUES MODE]
-    Trigger2[Overload symptoms<br/>visible] --> BLUES
-    Trigger3[Problem too complex<br/>for single session] --> BLUES
-    Trigger4[Multiple valid<br/>approaches exist] --> BLUES
-    Trigger5[Burnout signals<br/>appearing] --> BLUES
-    
-    BLUES --> BHO[Protocol 1:<br/>BHO<br/>Fork & Explore]
-    BLUES --> Pulse[Protocol 2:<br/>BLUES<br/>Send Rhythm]
-    
-    style BLUES fill:#e8f5e9,stroke:#2e7d32,stroke-width:4px
-    style Trigger1 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Trigger2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-```
+**Switch to BLUES immediately if ANY of these:**
 
-In Red Zone conditions, BLUES isn't optional. It's triage.
+1. **Zc ≥ 1.0** - Cognitive impedance in red zone
+2. **Overload symptoms visible** - Team showing stress signals
+3. **Problem too complex** - Cannot resolve in single session
+4. **Multiple valid approaches** - Need parallel exploration
+5. **Burnout signals appearing** - Team energy depleted
+
+**In Red Zone conditions, BLUES isn't optional. It's triage.**
 
 #### Protocol 1: BHO (Branching for High-Output)
 
 **Central Idea:** When you can't agree, don't argue—fork.
 
-```mermaid
-sequenceDiagram
-    participant Team
-    participant Developer
-    participant Fork
-    participant Merge
-    
-    Team->>Team: Discussion reaches impasse
-    Developer->>Fork: Declare fork with ID
-    Fork->>Fork: Explore independently
-    Note over Fork: No justification needed<br/>during exploration
-    Fork->>Merge: Document findings
-    Merge->>Team: Present results for decision
-```
+**The Fork Process:**
+
+1. **Discussion reaches impasse** → Team stuck on decision
+2. **Developer declares fork** → Creates fork with unique ID
+3. **Independent exploration** → No justification needed during work
+4. **Document findings** → Capture learnings (success or failure)
+5. **Present results** → Team reviews and decides path forward
 
 **Fork Declaration Template:**
 
@@ -425,35 +358,16 @@ When others fork:
 
 **Central Idea:** When overloaded, send rhythm instead of semantics.
 
-```mermaid
-graph LR
-    Overload[Person<br/>Overloaded] --> Choice{Send?}
-    
-    Choice -->|❌ Wrong| Content[Detailed<br/>Updates]
-    Choice -->|✓ Right| Rhythm[Pulse<br/>Signals]
-    
-    Content --> Bad1[Adds cognitive load<br/>to team]
-    Content --> Bad2[Demands processing<br/>bandwidth]
-    
-    Rhythm --> Good1[Maintains<br/>connection]
-    Rhythm --> Good2[No processing<br/>demanded]
-    Rhythm --> Good3[Trust<br/>preserved]
-    
-    style Content fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Rhythm fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style Bad1 fill:#ffcdd2
-    style Bad2 fill:#ffcdd2
-    style Good1 fill:#c8e6c9
-    style Good2 fill:#c8e6c9
-    style Good3 fill:#c8e6c9
-```
+**The Problem:**
+- Person disappears → Team loses track
+- Person over-communicates → Adds to collective load
 
-**Instead of this:**
-> "Team, I've been analyzing our architecture and I have concerns about the microservices approach. I've been seeing latency issues in the metrics that suggest we might want to reconsider. I've drafted a 10-page analysis of alternative patterns including a modified monolith approach with clear bounded contexts. I'd love everyone's feedback..."
+**The Solution: Send pulse, not content**
 
-**Send this:**
-> "BLUES: Still here. Making progress on architecture analysis.  
-> About 60% through. Need another 2 days before ready to share."
+| ❌ Wrong Approach | ✓ Right Approach |
+|:-----------------|:-----------------|
+| "Team, I've been analyzing our architecture and I have concerns about the microservices approach. I've been seeing latency issues in the metrics that suggest we might want to reconsider. I've drafted a 10-page analysis..." | "BLUES: Still here. Making progress on architecture analysis. About 60% through. Need another 2 days before ready to share." |
+| **Effect:** Demands processing from everyone | **Effect:** Maintains connection without cognitive load |
 
 **Valid BLUES Signals:**
 
@@ -491,28 +405,20 @@ Throughout this protocol, AI plays different roles in different modes. This is i
 
 > **AI must reduce cognitive impedance, never increase it.**
 
-```mermaid
-graph TD
-    AI[AI System] --> Question{Will this output<br/>require MORE<br/>team processing?}
-    
-    Question -->|YES| Wrong[❌ WRONG USE<br/>Content Amplifier]
-    Question -->|NO| Right[✓ RIGHT USE<br/>Impedance Transformer]
-    
-    Wrong --> Bad1[More to read]
-    Wrong --> Bad2[More to discuss]
-    Wrong --> Bad3[More to decide]
-    Wrong --> Result1[Zc INCREASES]
-    
-    Right --> Good1[Less to read]
-    Right --> Good2[Clearer signal]
-    Right --> Good3[Faster decisions]
-    Right --> Result2[Zc DECREASES]
-    
-    style Wrong fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-    style Right fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style Result1 fill:#ffcdd2,stroke:#c62828,stroke-width:3px
-    style Result2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
-```
+**The Test:**
+Before using AI for team output, ask: *"Will this require MORE team processing time?"*
+
+- **If YES** → Wrong use (content amplifier)
+- **If NO** → Right use (impedance transformer)
+
+**Impact on Cognitive Impedance:**
+
+| AI Use | Effect | Zc Impact |
+|:-------|:-------|:----------|
+| ❌ Generate 10 ideas | More to read, discuss, decide | Zc INCREASES |
+| ✓ Extract 3 key disagreements | Less to read, clearer signal | Zc DECREASES |
+| ❌ Write comprehensive proposal | 20+ pages to process | Zc INCREASES |
+| ✓ Synthesize 4 threads into matrix | 4 docs → 1 comparison | Zc DECREASES |
 
 ### Right Use vs. Wrong Use
 
@@ -525,33 +431,11 @@ graph TD
 
 ### Mode-Specific AI Roles
 
-```mermaid
-graph TB
-    subgraph ModeA[Mode A: Study Hall]
-        A1[AI as Personal Tutor]
-        A2[Individual research assistant]
-        A3[Answers questions privately]
-        A4[No team broadcasting]
-    end
-    
-    subgraph ModeB[Mode B: GUSH]
-        B1[AI as Semantic Moderator]
-        B2[Real-time transcription]
-        B3[Conflict mapping]
-        B4[Decision documentation]
-    end
-    
-    subgraph ModeC[Mode C: BLUES]
-        C1[AI as Context Bridge]
-        C2[Tracks active forks]
-        C3[Onboards new members]
-        C4[Synthesizes learnings]
-    end
-    
-    style ModeA fill:#e8eaf6,stroke:#3949ab,stroke-width:2px
-    style ModeB fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-    style ModeC fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
-```
+| Mode | AI Role | Functions | Broadcast? |
+|:-----|:--------|:----------|:-----------|
+| **Study Hall** | Personal Tutor | Individual research assistant, answers questions privately, synthesizes information | ❌ No team broadcasting |
+| **GUSH** | Semantic Moderator | Real-time transcription, conflict mapping, synthesis suggestions, decision documentation | ✓ Yes, to all participants |
+| **BLUES** | Context Bridge | Tracks active forks, onboards new members without bothering humans, synthesizes parallel learnings | ✓ Yes, but only when needed |
 
 ---
 
@@ -565,42 +449,29 @@ Daily team pulse (10 seconds per person):
 
 **"How overloaded did you feel today? (1-5)"**
 
-```mermaid
-graph LR
-    Scale1[1-2<br/>Green] --> Action1[Comfortable pace<br/>Could handle more]
-    Scale2[3-4<br/>Yellow] --> Action2[Getting stressed<br/>Near capacity]
-    Scale3[5<br/>Red] --> Action3[Drowning<br/>Can't keep up]
-    
-    Action1 --> Mode1[Study Hall or GUSH OK]
-    Action2 --> Mode2[Study Hall only<br/>Monitor closely]
-    Action3 --> Mode3[BLUES mandatory]
-    
-    style Scale1 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style Scale2 fill:#fff9c4,stroke:#f9a825,stroke-width:2px
-    style Scale3 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-```
+| Rating | Zone | Feeling | Action |
+|:-------|:-----|:--------|:-------|
+| **1-2** | Green | Comfortable pace, could handle more | Study Hall or GUSH OK |
+| **3-4** | Yellow | Getting stressed, near capacity | Study Hall only, monitor closely |
+| **5** | Red | Drowning, can't keep up | BLUES mandatory |
 
-If team average is consistently 4+, you're in high impedance. Switch to BLUES.
+**Rule:** If team average is consistently 4 or above, you're in high impedance. Switch to BLUES.
 
 ### The Quantitative Proxy
 
-```mermaid
-graph TD
-    Count1[Total messages sent<br/>in primary channels] --> Calc[Zc = Total / Average × Team Size]
-    Count2[Average messages<br/>each person processed] --> Calc
-    
-    Calc --> Zone1{Zc < 0.7?}
-    Calc --> Zone2{Zc 0.7-0.9?}
-    Calc --> Zone3{Zc ≥ 1.0?}
-    
-    Zone1 -->|Yes| Green[Green Zone<br/>Healthy]
-    Zone2 -->|Yes| Yellow[Yellow Zone<br/>Approaching overload]
-    Zone3 -->|Yes| Red[Red Zone<br/>Overload]
-    
-    style Green fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style Yellow fill:#fff9c4,stroke:#f9a825,stroke-width:2px
-    style Red fill:#ffcdd2,stroke:#c62828,stroke-width:2px
-```
+**Simple weekly calculation:**
+
+1. **Count:** Total messages sent in primary channels
+2. **Count:** Average messages each person actually processed
+3. **Calculate:** Zc = Total / (Average × Team Size)
+
+**Interpret the result:**
+
+| Zc Result | Zone | Status | Action |
+|:----------|:-----|:-------|:-------|
+| < 0.7 | Green | Healthy | Study Hall or GUSH safe |
+| 0.7-0.9 | Yellow | Approaching overload | Study Hall only, monitor |
+| ≥ 1.0 | Red | Overload | BLUES mandatory |
 
 **Example:**  
 Team of 6 sent 240 messages last week. Each person processed ~50 messages.
@@ -609,22 +480,22 @@ Zc = 240 / (50 × 6) = 240 / 300 = **0.8** (Yellow Zone)
 
 ### Leading Indicators
 
-```mermaid
-mindmap
-  root((Warning<br/>Signs))
-    Communication
-      Response times lengthening
-      "Sorry for late response"
-      "Did you see my message?"
-    Decisions
-      Same topics repeating
-      Decisions quietly reversed
-      "Let's table this" common
-    Energy
-      Night/weekend work to catch up
-      Active channels go silent
-      Increased irritability
-```
+**Watch for these warning signs:**
+
+**Communication Patterns:**
+- Response times lengthening
+- More "sorry for late response" messages
+- "Did you see my message about X?" questions
+
+**Decision Quality:**
+- Same topics discussed repeatedly
+- Decisions quietly reversed
+- "Let's table this" becoming common
+
+**Team Energy:**
+- Night/weekend work to "catch up"
+- Active channels going silent
+- Increased irritability in discussions
 
 When you see these, check impedance formally. You'll probably find Yellow or Red.
 
@@ -636,28 +507,14 @@ Understanding the framework is one thing. Using it is another.
 
 ### Implementation Timeline
 
-```mermaid
-gantt
-    title CIM Protocol Implementation
-    dateFormat YYYY-MM-DD
-    
-    section Week 1
-    Foundation meeting           :w1a, 2026-02-10, 1d
-    Baseline measurement        :w1b, 2026-02-11, 2d
-    Practice mode declaration   :w1c, 2026-02-13, 2d
-    
-    section Week 2
-    First real GUSH            :w2a, 2026-02-17, 1d
-    GUSH debrief              :w2b, 2026-02-18, 1d
-    
-    section Week 3
-    First real fork            :w3a, 2026-02-24, 5d
-    Fork review               :w3b, 2026-02-28, 1d
-    
-    section Week 4
-    High-impedance response    :w4a, 2026-03-03, 5d
-    Month 1 retrospective      :w4b, 2026-03-07, 1d
-```
+**4-Week Rollout Plan:**
+
+| Week | Focus | Key Activities | Duration |
+|:-----|:------|:---------------|:---------|
+| **Week 1** | Foundation | Team meeting (30 min) → Baseline measurement (2 days) → Practice mode declaration (2 days) | 5 days |
+| **Week 2** | First GUSH | Schedule real decision → Run full GUSH protocol → Debrief session | 5 days |
+| **Week 3** | First Fork | Identify disagreement → Declare BHO fork → Independent exploration → Fork review | 5 days |
+| **Week 4** | High-Impedance | Practice BLUES mode → Test both protocols → Month 1 retrospective | 5 days |
 
 ### Week 1: Foundation
 
