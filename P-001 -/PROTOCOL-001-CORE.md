@@ -453,7 +453,7 @@ Daily team pulse (10 seconds per person):
 |:-------|:-----|:--------|:-------|
 | **1-2** | Green | Comfortable pace, could handle more | Study Hall or GUSH OK |
 | **3-4** | Yellow | Getting stressed, near capacity | Study Hall only, monitor closely |
-| **5** | Red | Drowning, can't keep up | BLUES mandatory |
+| **5** | Red | Drowning, can't keep up | BLUES is a shared protection practice that anyone can invoke |
 
 **Rule:** If team average is consistently 4 or above, you're in high impedance. Switch to BLUES.
 
