@@ -1,4 +1,4 @@
-# The CIM Protocol
+# The CIM Pattern
 ## Cognitive Impedance Mismatch & Dynamic Mode Switching in Hybrid Teams
 
 **Created by:** Fabrizio Terzi (@BergamoHub)  
