@@ -1,4 +1,4 @@
-markdown# Cognitive CRDTs: Conflict-Free Idea Evolution
+# Cognitive CRDTs: Conflict-Free Idea Evolution
 
 **Version:** 1.1.0  
 **Last Updated:** February 2026  
