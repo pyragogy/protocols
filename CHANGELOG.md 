@@ -1,0 +1,12 @@
+# Changelog
+  
+  ## v1.1.0 - The Corneli Expansion (2026-02-15)
+  - Added: Taxonomy of 3 interaction modes
+  - Added: GUSH/BHO semantic operators
+  - Added: Cognitive CRDTs formalization
+  - Added: OST Agent architecture
+  - Contributors: Joe Corneli (Peeragogy)
+  
+  ## v1.0.0 - Initial Release (2025-12-01)
+  - Core CIM formula
+  - Basic Pyragogy principles
