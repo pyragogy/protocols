@@ -6,14 +6,32 @@
 **License:** MIT – Open Source Cognitive Infrastructure
 
 ---
-
 ## Before You Read This
 
 If you've ever finished a team meeting with more questions than answers, or watched your Slack explode while deadlines approach, you've hit **cognitive impedance**. It's what happens when your team generates information faster than it can process it.
 
-This protocol is the circuit breaker. It gives you three modes of operation—**Study Hall** (parallel work), **Group Project** (focused convergence), and **The Jam** (creative divergence)—and tells you exactly when to switch between them based on a simple ratio: information velocity divided by processing bandwidth.
+This protocol is the circuit breaker. It gives you three modes of operation—**Study Hall** (parallel work), **GUSH** (focused convergence), and **The Jam** (creative divergence)—and tells you exactly when to switch between them based on a simple ratio: information velocity divided by processing bandwidth.
 
 **Quick stats from our pilots**: 30% faster decisions, 40% less meeting time, 70% reduction in "I'm overwhelmed" signals. [Read the operational manual](OPERATIONAL-MANUAL.md) to start today.
+
+---
+
+## What to Read Next?
+
+**If you're convinced and want to start TODAY:**  
+→ Skip to [Getting Started](#4-getting-started) then read [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md)
+
+**If you're skeptical or need to convince leadership:**  
+→ Read [Metrics and Validation](#6-metrics-and-validation) (pilot results with N=12 teams)
+
+**If you want deep theory:**  
+→ Read [Theoretical Foundations](#5-theoretical-foundations) then [MATHEMATICAL-APPENDIX.md](MATHEMATICAL-APPENDIX.md)
+
+**If you want to see it in action:**  
+→ Read [EXAMPLES.md](EXAMPLES.md) for real-world scenarios
+
+**If you're ready to implement:**  
+→ [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md) has step-by-step templates
 
 ---
 
@@ -44,7 +62,7 @@ Where:
 **When $0.7 \leq Z_c < 1.0$**: Yellow zone. Start preparing for protocol shift.  
 **When $Z_c \geq 1.0$**: Red zone. Standard consensus mechanisms fail. You need this protocol.
 
-[See Mathematical Appendix for formal derivations and measurement protocols]
+[See MATHEMATICAL-APPENDIX.md for formal derivations and measurement protocols]
 
 ### 1.3 Why Traditional Solutions Fail
 
@@ -65,17 +83,22 @@ Different work requires different interaction patterns. We formalize three:
 | Mode | Name | When to Use | Synchronization | Key Operator |
 |------|------|-------------|-----------------|--------------|
 | **Mode A** | **Study Hall** | Independent tasks, shared presence | Low (async updates) | Presence Signal |
-| **Mode B** | **Group Project** | Convergent decision-making | High (scheduled sync) | **GUSH** |
+| **Mode B** | **GUSH** | Convergent decision-making | High (scheduled sync) | **GUSH Sessions** |
 | **Mode C** | **The Jam** | Divergent exploration, creative work | Rhythmic (pulse-based) | **BHO** + **BLUES** |
 
 **The innovation**: You switch modes based on measured $Z_c$, not intuition or calendar. When impedance hits 1.0, you don't schedule another meeting—you **fork the work** (Mode C) or **force a decision** (Mode B).
 
-### 2.2 The Two Operators
+**Terminology note:**
+- Mode C is called **"The Jam"** (the collaborative state)
+- **BLUES** is the asynchronous pulse protocol used in Mode C
+- **BHO** (Branching for High-Output) is the fork operation within Mode C
+
+### 2.2 The Core Operators
 
 #### GUSH (Generative Unified Semantic Harmonization)
-**What it is**: A convergence forcing function. Time-boxed (30-60 min), single-objective sessions where the team **must** produce a decision or deliverable.
+**What it is**: A convergence forcing function. Time-boxed (45-60 min), single-objective sessions where the team **must** produce a decision or deliverable.
 
-**When to use**: $Z_c$ is rising but you need alignment **now**. You have 5 competing ideas and need to pick one by Friday.
+**When to use**: $Z_c$ is low enough for sync (<0.7) but you need alignment **now**. You have 5 competing ideas and need to pick one by Friday.
 
 **Protocol**:
 1. Async prep required (no cold starts)
@@ -86,6 +109,8 @@ Different work requires different interaction patterns. We formalize three:
 
 **Example**: 
 > Team has debated SQL vs NoSQL for 2 weeks. GUSH session: 45 min, each side presents 5-min pitch, 20-min structured debate, AI synthesizes trade-offs, team votes with weighted criteria. Done.
+
+[See complete GUSH template with real decision example](OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence)
 
 #### BHO (Branching for High-Output)
 **What it is**: A cognitive fork. Someone (or a subgroup) declares they're going deep on an idea in isolation for N days.
@@ -100,6 +125,8 @@ Different work requires different interaction patterns. We formalize three:
 
 **Example**:
 > Alice is exploring a complex architecture option. Instead of daily standups fragmenting her thinking, she declares BHO for 4 days, posts a Friday status pulse, then schedules 30-min Micro-GUSH to present findings.
+
+[See complete Fork Declaration template](OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho)
 
 ### 2.3 BLUES Protocol (The Pulse)
 
@@ -118,7 +145,9 @@ When the team is in distributed Mode C (multiple BHO forks active), the **BLUES 
 - No discussion in pulse thread
 - AI aggregates into daily digest
 
-**BEACON**: Emergency signal. Means "I'm blocked, need sync." Triggers Micro-GUSH scheduling.
+**BEACON**: Emergency signal. Means "I'm blocked, need sync." Triggers Micro-GUSH scheduling within 24h.
+
+[See complete Pulse template with good/bad examples](OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode)
 
 ---
 
@@ -156,6 +185,19 @@ The AI in this protocol **does not make decisions**. It's a procedural assistant
 - Monitors for distress signals (sentiment analysis, response latency)
 - Alerts human facilitator if $Z_c$ stays critical >7 days
 
+**AI Golden Rule:**
+> AI outputs must REDUCE team cognitive load, never increase it.
+
+**Test:** "Will this AI output require MORE team processing?"
+- If YES → Wrong use of AI
+- If NO → Correct use of AI
+
+**Practical guidelines:**
+- Max 5 bullet points per summary
+- 2-minute read time maximum
+- Action items always at top
+- Review AI outputs weekly for quality
+
 **Critical**: AI **never** decides who works on what, which idea is "better," or when to end a BHO. Those are human calls.
 
 ### 3.3 Cognitive CRDTs (Conflict-Free Idea Evolution)
@@ -180,47 +222,38 @@ One key innovation: we apply **CRDT principles** (Conflict-Free Replicated Data 
 ### 4.1 Week 1: Baseline and First Mode
 
 **Day 1 (Monday)**: 
-- Calculate baseline $Z_c$ using [this diagnostic](OPERATIONAL-MANUAL.md#test-del-termometro)
-- Pick your starting mode (most teams start Mode A or B)
-- Configure tools (Slack statuses, dashboard)
+- Calculate baseline $Z_c$ using [the analog method](OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method) (5 minutes)
+- Confirm with [qualitative thermometer test](OPERATIONAL-MANUAL.md#12-the-thermometer-test-qualitative-backup) (2 minutes)
+- Pick your starting mode based on Zc zone (green/yellow/red)
+- Configure tools following [setup guide](OPERATIONAL-MANUAL.md#14-configure-your-tools-45-minutes) (45 minutes)
 
 **Day 2-3**: 
-- If Mode B: Schedule first GUSH with [prep checklist](OPERATIONAL-MANUAL.md#mode-b-checklist)
-- If Mode C: Have one person declare first BHO (normalize the behavior)
+- Run kickoff meeting using [30-minute agenda](OPERATIONAL-MANUAL.md#15-the-kickoff-meeting-30-minutes)
+- Introduce templates to team (show, don't just tell)
+- Assign facilitator role (rotates weekly)
+- Start using chosen mode
 
-**Day 4-5**:
-- First pulse check-in (if Mode C)
-- Micro-retrospective: What worked? What felt weird?
+**Day 4-5**: 
+- Practice using templates ([Pulse](OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode), [Fork](OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho), or [GUSH](OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence) depending on mode)
+- Measure $Z_c$ daily
+- Note what feels awkward (for Friday retro)
 
-**Metrics to track**:
-- Time from "idea proposed" to "decision made"
-- % of messages read (Slack analytics)
-- Self-reported overwhelm (1-10 scale, weekly)
+**Friday EOD**:
+- 15-minute retrospective
+  - What worked?
+  - What felt awkward?
+  - $Z_c$ now vs Monday?
+- Adjust for Week 2
 
-### 4.2 Common Failure Modes (And Fixes)
+### 4.2 Adoption Checklist
 
-**"Nobody wants to declare BHO"**  
-→ Team lead declares first one. Celebrate successful BHOs publicly. Make it a positive signal, not a "going dark" stigma.
-
-**"GUSH sessions always run over"**  
-→ Hard timer. Non-negotiable stop. If unfinished, schedule GUSH Part 2. Never extend in the moment.
-
-**"AI summaries are too long"**  
-→ Re-train with Golden Rule: "Max 5 bullet points, 2-minute read, action items at top." Review AI outputs weekly.
-
-**"Pulse updates get ignored"**  
-→ AI should aggregate into ONE daily digest, same time every day. Not 10 separate messages.
-
-### 4.3 Adoption Checklist
-
-- [ ] Entire team reads [Operational Manual](OPERATIONAL-MANUAL.md) (30 min)
+- [ ] Entire team reads [Operational Manual](OPERATIONAL-MANUAL.md) Part 0-I (30 min)
 - [ ] Calculate baseline $Z_c$ (5 min)
 - [ ] Configure Slack/tools with Mode statuses (15 min)
 - [ ] Schedule first GUSH OR first BHO (whichever fits current $Z_c$)
-- [ ] Brief AI on [Golden Rules](OPERATIONAL-MANUAL.md#golden-rule)
 - [ ] Set weekly retrospective (15 min, Friday EOD)
 
-**Total onboarding time**: ~2 hours. Then iterate.
+**Total onboarding time**: ~1.5 hours setup, then 15 min/day ongoing.
 
 ---
 
@@ -242,7 +275,7 @@ The protocol draws on two deep principles:
 **Convergence**: Shared focus on peer-driven learning and pattern-based coordination.  
 **Divergence**: Peeragogy optimizes for consensus and shared understanding. Pyragogy optimizes for **resilience under high cognitive load**. We preserve divergence when convergence is too costly.
 
-Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction modes (Study Hall/Group Project/Jam) and the semantic operators (GUSH/BHO as named primitives).
+Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction modes (Study Hall/GUSH/Jam) and the semantic operators (GUSH/BHO as named primitives).
 
 #### vs. CRDTs (Shapiro et al., 2011)
 **Adoption**: We directly apply conflict-free replication principles to cognitive artifacts (ideas, decisions, arguments).  
@@ -273,7 +306,8 @@ Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction m
 
 ### 6.2 Pilot Results (N=12 teams, 3 months)
 
-**Context**: 6 software teams (8-12 people), 3 research groups (5-7), 3 educational cohorts (20-30).
+**Context**: 6 software teams (8-12 people), 3 research groups (5-7), 3 educational cohorts (20-30).  
+**Pilot period**: September-December 2025 (12 weeks per team)
 
 **Findings**:
 - Decision latency: **-34%** (median 3.2 days → 2.1 days)
@@ -287,9 +321,30 @@ Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction m
 
 ---
 
-## 7. CONTRIBUTING
+## 7. TROUBLESHOOTING: Common Failure Modes
 
-### 7.1 We Need
+**"Nobody wants to declare BHO"**  
+→ Team lead declares first one. Celebrate successful BHOs publicly. Make it a positive signal, not a "going dark" stigma.
+
+**"GUSH sessions always run over"**  
+→ Hard timer. Non-negotiable stop. If unfinished, schedule GUSH Part 2. Never extend in the moment.
+
+**"AI summaries are too long"**  
+→ Re-train with AI Golden Rule: "Max 5 bullet points, 2-minute read, action items at top." Review AI outputs weekly.
+
+**"Pulse updates get ignored"**  
+→ AI should aggregate into ONE daily digest, same time every day. Not 10 separate messages.
+
+**"Team members in different modes simultaneously"**  
+→ This is OK if different projects. Problem if same project with conflicting expectations. Fix: Declare modes at project level, not person level.
+
+[More troubleshooting scenarios in OPERATIONAL-MANUAL.md Phase 2 - coming Q2 2026]
+
+---
+
+## 8. CONTRIBUTING
+
+### 8.1 We Need
 
 **Pilot testers**: Teams willing to run 8-week trials and share data (anonymized).
 
@@ -299,7 +354,7 @@ Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction m
 
 **Translators**: This protocol should work globally. Help us localize.
 
-### 7.2 How to Contribute
+### 8.2 How to Contribute
 
 1. **Test and document**: Use the protocol, share what breaks
 2. **Code**: See [issues tagged "help wanted"](../../issues)
@@ -315,16 +370,17 @@ Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction m
 
 ---
 
-## 8. ROADMAP
+## 9. ROADMAP
 
-### v1.1.0 (Current - February 2026)
-- ✅ Three-mode taxonomy
-- ✅ GUSH/BHO operators formalized
-- ✅ Cognitive CRDTs framework
-- ✅ Operational manual
-- ✅ Pilot validation (N=12)
+### v1.1.0 (Current - February 2026) ✅ COMPLETE
+- ✅ Three-mode taxonomy formalized
+- ✅ GUSH/BHO operators defined with protocols
+- ✅ Cognitive CRDTs mathematical framework
+- ✅ **Operational Manual Phase 1 complete** (templates, week 1 onboarding)
+- ✅ Pilot validation (N=12 teams, 3 months)
 
 ### v1.2.0 (Planned - Q2 2026)
+- [ ] Operational Manual Phase 2 (troubleshooting, advanced playbooks)
 - [ ] OST Agent reference implementation (Python)
 - [ ] Metrics dashboard (web interface)
 - [ ] Integration guides (Slack, Notion, Linear)
@@ -338,7 +394,7 @@ Joe Corneli's contribution to v1.1 was formalizing the taxonomy of interaction m
 
 ---
 
-## 9. LICENSE & CITATION
+## 10. LICENSE & CITATION
 
 ### License
 This protocol is released under **MIT License** for code and **CC-BY-4.0** for documentation. Use freely, attribute clearly.
@@ -346,7 +402,7 @@ This protocol is released under **MIT License** for code and **CC-BY-4.0** for d
 ### Citation
 ```bibtex
 @techreport{terzi2026pyragogy,
-  title={PROTOCOL-001-CORE: Cognitive Morphogenesis v1.1.0},
+  title={CIM Protocol v1.1.0: Cognitive Impedance Mismatch in Hybrid Teams},
   author={Terzi, Fabrizio and Corneli, Joe},
   year={2026},
   institution={Pyragogy.org},
@@ -359,7 +415,7 @@ Thanks to the Peeragogy community for foundational work on peer learning pattern
 
 ---
 
-## 10. FINAL NOTE
+## 11. FINAL NOTE
 
 This protocol emerged from necessity, not theory. We built it because our teams were drowning and "just have better meetings" wasn't working.
 
@@ -369,15 +425,54 @@ It's not perfect. It won't solve every collaboration problem. But it gives you a
 
 ---
 
-**Document Hash**: `P001-v1.1.0-CORNELI-20260210`  
-**Last Updated**: February 10, 2026  
+## QUICK REFERENCE CARD
+
+**Print and post this where your team can see it**
+
+### THE CIM PROTOCOL – ONE-PAGE ESSENTIALS
+
+**Core Metric:**  
+Zc = Information Generated / Team Processing Capacity
+
+**Zones:**
+- 🟢 **Zc < 0.7 → GREEN** (use Study Hall or GUSH)
+- 🟡 **0.7-0.9 → YELLOW** (monitor, prepare for BLUES)
+- 🔴 **Zc ≥ 1.0 → RED** (activate BLUES immediately)
+
+**Three Modes:**
+
+**MODE A: STUDY HALL** (Independent work)
+- Signal presence, don't interrupt
+- Deep work protected
+- Async-first communication
+
+**MODE B: GUSH** (Force decision in 45-60 min)
+- Pre-work required 24h before
+- Must produce committed decision
+- AI moderates, humans decide
+
+**MODE C: THE JAM** (Async rhythm via BLUES)
+- Daily pulse updates (one line, emoji status)
+- Fork when stuck (BHO protocol)
+- BEACON for emergencies (get help <24h)
+
+**Emergency Override:**
+Anyone can call "BLUES MODE" when drowning. Team switches immediately. No explanation needed.
+
+**First Step:**  
+Calculate your Zc: [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method)
+
+---
+
+**Document Version**: v1.1.0-COMPLETE  
+**Last Updated**: February 11, 2026  
 **Maintainer**: [@BergamoHub](https://github.com/BergamoHub)  
 **Community**: [Discussions](../../discussions) | [Issues](../../issues) | [Email](mailto:info@pyragogy.org)
 
 ---
 
 **Related Documents**:
-- [Operational Manual](OPERATIONAL-MANUAL.md) - Start here for practical implementation
+- [Operational Manual](OPERATIONAL-MANUAL.md) - **START HERE** for practical implementation
 - [Cognitive CRDTs](COGNITIVE-CRDTS.md) - Mathematical foundations of conflict-free ideation
 - [Mathematical Appendix](MATHEMATICAL-APPENDIX.md) - Formal proofs and derivations
 - [Examples](EXAMPLES.md) - Real-world scenarios and case studies
