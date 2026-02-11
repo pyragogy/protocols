@@ -12,26 +12,26 @@ If you've ever finished a team meeting with more questions than answers, or watc
 
 This protocol is the circuit breaker. It gives you three modes of operation—**Study Hall** (parallel work), **GUSH** (focused convergence), and **The Jam** (creative divergence)—and tells you exactly when to switch between them based on a simple ratio: information velocity divided by processing bandwidth.
 
-**Quick stats from our pilots**: 30% faster decisions, 40% less meeting time, 70% reduction in "I'm overwhelmed" signals. [Read the operational manual](OPERATIONAL-MANUAL.md) to start today.
+**Quick stats from our pilots**: 30% faster decisions, 40% less meeting time, 70% reduction in "I'm overwhelmed" signals. [Read the operational manual](P-001 -/OPERATIONAL-MANUAL.md) to start today.
 
 ---
 
 ## What to Read Next?
 
 **If you're convinced and want to start TODAY:**  
-→ Skip to [Getting Started](#4-getting-started) then read [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md)
+→ Skip to [Getting Started](#4-getting-started) then read [OPERATIONAL-MANUAL.md](P-001 -/OPERATIONAL-MANUAL.md)
 
 **If you're skeptical or need to convince leadership:**  
 → Read [Metrics and Validation](#6-metrics-and-validation) (pilot results with N=12 teams)
 
 **If you want deep theory:**  
-→ Read [Theoretical Foundations](#5-theoretical-foundations) then [MATHEMATICAL-APPENDIX.md](MATHEMATICAL-APPENDIX.md)
+→ Read [Theoretical Foundations](#5-theoretical-foundations) then [MATHEMATICAL-APPENDIX.md](P-001 -/MATHEMATICAL-APPENDIX.md)
 
 **If you want to see it in action:**  
-→ Read [EXAMPLES.md](EXAMPLES.md) for real-world scenarios
+→ Read [EXAMPLES.md](P-001 -/EXAMPLES.md) for real-world scenarios
 
 **If you're ready to implement:**  
-→ [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md) has step-by-step templates
+→ [OPERATIONAL-MANUAL.md](P-001 -/OPERATIONAL-MANUAL.md) has step-by-step templates
 
 ---
 
@@ -110,7 +110,7 @@ Different work requires different interaction patterns. We formalize three:
 **Example**: 
 > Team has debated SQL vs NoSQL for 2 weeks. GUSH session: 45 min, each side presents 5-min pitch, 20-min structured debate, AI synthesizes trade-offs, team votes with weighted criteria. Done.
 
-[See complete GUSH template with real decision example](OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence)
+[See complete GUSH template with real decision example](P-001 -/OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence)
 
 #### BHO (Branching for High-Output)
 **What it is**: A cognitive fork. Someone (or a subgroup) declares they're going deep on an idea in isolation for N days.
@@ -126,7 +126,7 @@ Different work requires different interaction patterns. We formalize three:
 **Example**:
 > Alice is exploring a complex architecture option. Instead of daily standups fragmenting her thinking, she declares BHO for 4 days, posts a Friday status pulse, then schedules 30-min Micro-GUSH to present findings.
 
-[See complete Fork Declaration template](OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho)
+[See complete Fork Declaration template](P-001 -/OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho)
 
 ### 2.3 BLUES Protocol (The Pulse)
 
@@ -147,7 +147,7 @@ When the team is in distributed Mode C (multiple BHO forks active), the **BLUES 
 
 **BEACON**: Emergency signal. Means "I'm blocked, need sync." Triggers Micro-GUSH scheduling within 24h.
 
-[See complete Pulse template with good/bad examples](OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode)
+[See complete Pulse template with good/bad examples](P-001 -/OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode)
 
 ---
 
@@ -222,19 +222,19 @@ One key innovation: we apply **CRDT principles** (Conflict-Free Replicated Data 
 ### 4.1 Week 1: Baseline and First Mode
 
 **Day 1 (Monday)**: 
-- Calculate baseline $Z_c$ using [the analog method](OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method) (5 minutes)
-- Confirm with [qualitative thermometer test](OPERATIONAL-MANUAL.md#12-the-thermometer-test-qualitative-backup) (2 minutes)
+- Calculate baseline $Z_c$ using [the analog method](P-001 -/OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method) (5 minutes)
+- Confirm with [qualitative thermometer test](P-001 -/OPERATIONAL-MANUAL.md#12-the-thermometer-test-qualitative-backup) (2 minutes)
 - Pick your starting mode based on Zc zone (green/yellow/red)
-- Configure tools following [setup guide](OPERATIONAL-MANUAL.md#14-configure-your-tools-45-minutes) (45 minutes)
+- Configure tools following [setup guide](P-001 -/OPERATIONAL-MANUAL.md#14-configure-your-tools-45-minutes) (45 minutes)
 
 **Day 2-3**: 
-- Run kickoff meeting using [30-minute agenda](OPERATIONAL-MANUAL.md#15-the-kickoff-meeting-30-minutes)
+- Run kickoff meeting using [30-minute agenda](P-001 -/OPERATIONAL-MANUAL.md#15-the-kickoff-meeting-30-minutes)
 - Introduce templates to team (show, don't just tell)
 - Assign facilitator role (rotates weekly)
 - Start using chosen mode
 
 **Day 4-5**: 
-- Practice using templates ([Pulse](OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode), [Fork](OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho), or [GUSH](OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence) depending on mode)
+- Practice using templates ([Pulse](P-001 -/OPERATIONAL-MANUAL.md#template-1-the-pulse-blues-mode), [Fork](P-001 -/OPERATIONAL-MANUAL.md#template-2-fork-declaration-bho), or [GUSH](P-001 -/OPERATIONAL-MANUAL.md#template-3-gush-agenda-forced-convergence) depending on mode)
 - Measure $Z_c$ daily
 - Note what feels awkward (for Friday retro)
 
@@ -247,7 +247,7 @@ One key innovation: we apply **CRDT principles** (Conflict-Free Replicated Data 
 
 ### 4.2 Adoption Checklist
 
-- [ ] Entire team reads [Operational Manual](OPERATIONAL-MANUAL.md) Part 0-I (30 min)
+- [ ] Entire team reads [Operational Manual](P-001 -/OPERATIONAL-MANUAL.md) Part 0-I (30 min)
 - [ ] Calculate baseline $Z_c$ (5 min)
 - [ ] Configure Slack/tools with Mode statuses (15 min)
 - [ ] Schedule first GUSH OR first BHO (whichever fits current $Z_c$)
@@ -460,7 +460,7 @@ Zc = Information Generated / Team Processing Capacity
 Anyone can call "BLUES MODE" when drowning. Team switches immediately. No explanation needed.
 
 **First Step:**  
-Calculate your Zc: [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method)
+Calculate your Zc: [OPERATIONAL-MANUAL.md](P-001 -/OPERATIONAL-MANUAL.md#11-calculate-your-baseline-zc-the-analog-method)
 
 ---
 
@@ -472,9 +472,9 @@ Calculate your Zc: [OPERATIONAL-MANUAL.md](OPERATIONAL-MANUAL.md#11-calculate-yo
 ---
 
 **Related Documents**:
-- [Operational Manual](OPERATIONAL-MANUAL.md) - **START HERE** for practical implementation
-- [Cognitive CRDTs](COGNITIVE-CRDTS.md) - Mathematical foundations of conflict-free ideation
-- [Mathematical Appendix](MATHEMATICAL-APPENDIX.md) - Formal proofs and derivations
-- [Examples](EXAMPLES.md) - Real-world scenarios and case studies
-- [FAQ](FAQ.md) - Common questions and troubleshooting
+- [Operational Manual](P-001 -/OPERATIONAL-MANUAL.md) - **START HERE** for practical implementation
+- [Cognitive CRDTs](P-001 -/COGNITIVE-CRDTS.md) - Mathematical foundations of conflict-free ideation
+- [Mathematical Appendix](P-001 -/MATHEMATICAL-APPENDIX.md) - Formal proofs and derivations
+- [Examples](P-001 -/EXAMPLES.md) - Real-world scenarios and case studies
+- [FAQ](P-001 -/FAQ.md) - Common questions and troubleshooting
 - [Contributors Guide](CONTRIBUTORS.md) - How to help improve this protocol

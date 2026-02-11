@@ -10,7 +10,7 @@ markdown# Cognitive CRDTs: Conflict-Free Idea Evolution
 
 This is the technical explanation of how we apply **Conflict-Free Replicated Data Types** (CRDTs) from distributed computing to **collaborative thinking**. 
 
-If you want the executive summary: [go back to the README](README.md#33-cognitive-crdts-conflict-free-idea-evolution).
+If you want the executive summary: [go back to the README](../README.md#33-cognitive-crdts-conflict-free-idea-evolution).
 
 If you want to understand *why* multiple people can fork an idea, work on it independently for a week, and merge without conflicts—keep reading.
 
@@ -641,7 +641,7 @@ Empirical data needed: N=5 vs N=15 vs N=50.
 ---
 
 **Related Documents**:
-- [README](README.md) - Overview of the full protocol
+- [README](../README.md) - Overview of the full protocol
 - [Mathematical Appendix](MATHEMATICAL-APPENDIX.md) - Formal proofs
 - [Operational Manual](OPERATIONAL-MANUAL.md) - How to actually do this
 - [Examples](EXAMPLES.md) - More real-world scenarios
@@ -656,4 +656,4 @@ Empirical data needed: N=5 vs N=15 vs N=50.
 **Last Updated**: February 10, 2026  
 **Authors**: Fabrizio Terzi, with contributions from the Pyragogy community
 
-[← Back to README](README.md) | [View on GitHub](https://github.com/pyragogy/protocol-001-core)
+[← Back to README](../README.md) | [View on GitHub](https://github.com/pyragogy/protocol-001-core)

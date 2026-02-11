@@ -18,7 +18,7 @@ This is the **how-to guide** for teams starting Pyragogy. If the README is the "
 - You want to try the protocol without building custom software first
 
 **You're in the WRONG place if:**
-- You want conceptual explanation → [Go to README](README.md)
+- You want conceptual explanation → [Go to README](../README.md)
 - You want mathematical proofs → [Go to MATHEMATICAL-APPENDIX](MATHEMATICAL-APPENDIX.md)
 - You want to understand CRDTs deeply → [Go to COGNITIVE-CRDTS](COGNITIVE-CRDTS.md)
 
@@ -1728,7 +1728,7 @@ Use freely. Attribute clearly.
 ---
 
 **Related Documents:**
-- [README](README.md) - Conceptual overview and theory
+- [README](../README.md) - Conceptual overview and theory
 - [MATHEMATICAL-APPENDIX](MATHEMATICAL-APPENDIX.md) - Formal proofs
 - [COGNITIVE-CRDTS](COGNITIVE-CRDTS.md) - Technical deep-dive on CRDTs
 - [EXAMPLES](EXAMPLES.md) - Real-world scenarios

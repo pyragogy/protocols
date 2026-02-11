@@ -8,7 +8,7 @@
 
 ## Purpose of This Document
 
-This appendix provides rigorous mathematical foundations for the Pyragogy protocol. If you're implementing the protocol practically, you don't need this—[start with the README](README.md) or [Operational Manual](OPERATIONAL-MANUAL.md) instead.
+This appendix provides rigorous mathematical foundations for the Pyragogy protocol. If you're implementing the protocol practically, you don't need this—[start with the README](../README.md) or [Operational Manual](OPERATIONAL-MANUAL.md) instead.
 
 **This is for**:
 - Researchers validating theoretical claims
@@ -420,4 +420,4 @@ $$R^2 = 0.67, p < 0.0001$$
 **Last Updated**: February 10, 2026  
 **Maintainer**: Fabrizio Terzi (@BergamoHub)
 
-[← Back to README](README.md) | [View on GitHub](https://github.com/pyragogy/protocol-001-core)
+[← Back to README](../README.md) | [View on GitHub](https://github.com/pyragogy/protocol-001-core)
