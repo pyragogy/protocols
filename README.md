@@ -1,15 +1,13 @@
-markdown# PROTOCOL-001-CORE: Cognitive Morphogenesis
-**Managing Cognitive Impedance in Hybrid Human-AI Teams**
+# The CIM Pattern
+## Cognitive Impedance Mismatch & Dynamic Mode Switching in Hybrid Teams
 
-**Version:** 1.1.0 — *The Corneli Expansion*  
-**Status:** Canonical Specification  
-**Date:** February 2026  
-**Lead Designer:** Fabrizio Terzi (@BergamoHub)  
-**Contributors:** Joe Corneli (Peeragogy Project)
+**Created by:** Fabrizio Terzi (@BergamoHub)  
+**Version:** 2.0 – February 2026  
+**License:** MIT – Open Source Cognitive Infrastructure
 
 ---
 
-## TL;DR
+## Before You Read This
 
 If you've ever finished a team meeting with more questions than answers, or watched your Slack explode while deadlines approach, you've hit **cognitive impedance**. It's what happens when your team generates information faster than it can process it.
 
