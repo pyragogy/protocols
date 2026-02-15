@@ -1,0 +1,31 @@
+# CIM Pattern - Curator AI Requirements
+# Python 3.8+
+
+# Core Dependencies
+anthropic>=0.18.0         # Claude API for recommendations
+fastapi>=0.109.0          # Dashboard backend API
+uvicorn[standard]>=0.27.0 # ASGI server
+pydantic>=2.5.0           # Data validation
+
+# Integrations
+slack-sdk>=3.26.0         # Slack bot integration
+discord.py>=2.3.0         # Discord bot integration
+
+# Testing
+pytest>=8.0.0             # Unit testing framework
+pytest-asyncio>=0.23.0    # Async test support
+pytest-cov>=4.1.0         # Code coverage
+
+# Optional (for specific integrations)
+# notion-client>=2.2.0    # Notion API
+# PyGithub>=2.1.0         # GitHub API
+# google-api-python-client>=2.110.0  # Google APIs
+
+# Development
+black>=23.12.0            # Code formatting
+flake8>=7.0.0             # Linting
+mypy>=1.8.0               # Type checking
+
+# Documentation
+mkdocs>=1.5.0             # Documentation generation
+mkdocs-material>=9.5.0    # Material theme

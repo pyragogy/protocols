@@ -1,0 +1,164 @@
+# Curator AI Configuration
+# 
+# This file configures the Curator AI monitoring system for your team.
+# Copy this to config.local.yaml and customize for your team.
+
+# Team Configuration
+team:
+  name: "My Team"
+  size: 10
+  processing_hours_per_person: 3.0  # Effective hours spent processing information per day
+  timezone: "UTC"
+
+# Monitoring Configuration
+monitoring:
+  enabled: true
+  interval_minutes: 60  # How often to calculate Zc
+  store_history: true
+  history_days: 90  # How long to keep history
+
+# Zc Thresholds (optional - use defaults if not specified)
+thresholds:
+  green_max: 0.7    # Below this = GREEN zone
+  yellow_max: 1.0   # Below this = YELLOW zone (above = RED)
+
+# Data Sources
+# Enable/disable each source and provide credentials
+sources:
+  slack:
+    enabled: true
+    token: "${SLACK_BOT_TOKEN}"
+    channels: ["general", "random", "team"]  # Channels to monitor (empty = all)
+    
+  discord:
+    enabled: false
+    token: "${DISCORD_BOT_TOKEN}"
+    guild_id: ""  # Discord server ID
+    channels: []  # Channel IDs to monitor (empty = all)
+    
+  notion:
+    enabled: false
+    token: "${NOTION_API_KEY}"
+    database_ids: []  # Notion databases to monitor
+    
+  github:
+    enabled: false
+    token: "${GITHUB_TOKEN}"
+    repos: []  # Repos to monitor (format: "owner/repo")
+    
+  linear:
+    enabled: false
+    api_key: "${LINEAR_API_KEY}"
+    team_id: ""
+    
+  # Manual metrics (for sources without API integration)
+  manual:
+    enabled: true
+    # Add manual counts here when running curator
+    email_threads: 0
+    ai_outputs: 0
+
+# Anthropic API (for AI recommendations)
+anthropic:
+  api_key: "${ANTHROPIC_API_KEY}"
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 1000
+
+# Notifications
+# Where to send Zc alerts and recommendations
+notifications:
+  slack:
+    enabled: true
+    webhook_url: "${SLACK_WEBHOOK_URL}"
+    channel: "#team"
+    notify_on:
+      - "zone_change"      # When zone changes (GREEN→YELLOW, etc.)
+      - "threshold_cross"  # When Zc crosses thresholds
+      - "daily_summary"    # Daily Zc report
+    
+  discord:
+    enabled: false
+    webhook_url: "${DISCORD_WEBHOOK_URL}"
+    notify_on:
+      - "zone_change"
+    
+  email:
+    enabled: false
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    from_email: "${CURATOR_EMAIL}"
+    to_emails: []
+    notify_on:
+      - "zone_change"
+
+# Dashboard Configuration
+dashboard:
+  enabled: true
+  host: "0.0.0.0"
+  port: 3000
+  refresh_interval: 60  # Seconds
+
+# Database (for history storage)
+database:
+  type: "sqlite"  # sqlite, postgresql
+  path: "./curator_history.db"  # For SQLite
+  # For PostgreSQL:
+  # host: "localhost"
+  # port: 5432
+  # database: "curator"
+  # user: "${DB_USER}"
+  # password: "${DB_PASSWORD}"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "./curator.log"
+  max_size_mb: 10
+  backup_count: 5
+
+# Advanced
+advanced:
+  # Trend detection
+  trend_window_hours: 24
+  trend_sensitivity: 0.1  # How much change needed to detect trend
+  
+  # Recommendation engine
+  use_ai_recommendations: true  # Use Claude API (requires anthropic.api_key)
+  fallback_to_basic: true  # Use basic recommendations if API fails
+  
+  # Auto mode switching
+  auto_suggest_gush: true  # Automatically suggest GUSH sessions in Yellow zone
+  auto_suggest_jam: true   # Automatically suggest The Jam in Red zone
+  
+  # Metrics collection
+  collect_metrics_async: true  # Don't block on slow API calls
+  api_timeout_seconds: 10
+
+# Example Team Context (used by AI recommendations)
+team_context: |
+  We're a 10-person startup building AI tools.
+  Team is fully remote across US timezones.
+  Heavy users of Claude, Cursor, Slack, and Notion.
+  Prefer async-first but comfortable with sync when needed.
+
+---
+# ENVIRONMENT VARIABLES
+# 
+# Set these in your environment or .env file:
+# 
+# Required:
+#   ANTHROPIC_API_KEY=sk-ant-...
+# 
+# Optional (enable sources you use):
+#   SLACK_BOT_TOKEN=xoxb-...
+#   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
+#   DISCORD_BOT_TOKEN=...
+#   NOTION_API_KEY=secret_...
+#   GITHUB_TOKEN=ghp_...
+#   LINEAR_API_KEY=lin_api_...
+# 
+# Usage:
+#   1. Copy this file: cp config.yaml config.local.yaml
+#   2. Edit config.local.yaml with your settings
+#   3. Set environment variables
+#   4. Run: python -m curator-ai --config config.local.yaml

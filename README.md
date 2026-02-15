@@ -123,26 +123,59 @@ python tools/calculators/cli/zc_cli.py \
 
 ## Installation
 
-### Web Calculator (Zero Dependencies)
+### Quick Setup (Recommended)
+
 ```bash
+# Clone repository
 git clone https://github.com/pyragogy/protocols.git
-cd protocols/tools/zc-calculator
-open index.html  # or: python -m http.server 8000
+cd protocols
+
+# Run automated setup
+chmod +x scripts/setup.sh
+./scripts/setup.sh
+
+# Edit .env with your API keys
+nano .env
+
+# Start everything
+chmod +x scripts/run.sh
+./scripts/run.sh
 ```
 
-### CLI Tool
+That's it! Dashboard opens at http://localhost:3000
+
+### Manual Setup
+
 ```bash
-# Python 3.8+ required, no external dependencies
-python tools/zc-calculator/zc_cli.py --help
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Install Frontend dependencies
+cd tools/dashboard/frontend
+npm install
+cd ../../..
+
+# Copy environment template
+cp .env.example .env
+# Edit .env with your keys
+
+# Start backend
+python tools/dashboard/backend/api.py
+
+# Start frontend (in another terminal)
+cd tools/dashboard/frontend
+npm start
 ```
 
-### Slack Integration
-```bash
-# Set up webhook
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+### Docker
 
-# Send notification
-python tools/templates/slack_notifier.py --mode GUSH --zc 0.85
+```bash
+# Copy .env template
+cp .env.example .env
+# Edit .env with your keys
+
+# Start with Docker Compose
+docker-compose up
 ```
 
 ---
