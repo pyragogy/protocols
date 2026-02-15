@@ -22,15 +22,13 @@ Your team uses Claude, Cursor, Notion, and Slack. You're shipping code and ideas
 - Decision paralysis disguised as "async-first culture"
 - Burnout from cognitive overload
 
-**The math:**
+### **The math:**
 
-```
-Zc = V_generation / B_social
+$$\huge Z_c = \frac{V_{generation}}{B_{social}}$$
 
-Green Zone (Zc < 0.7): Async works
-Yellow Zone (Zc 0.7-1.0): Schedule GUSH session
-Red Zone (Zc ≥ 1.0): Activate The Jam
-```
+* 🟢 **Green Zone ($Z_c < 0.7$):** Async works
+* 🟡 **Yellow Zone ($Z_c \ 0.7-1.0$):** Schedule GUSH session
+* 🔴 **Red Zone ($Z_c \ge 1.0$):** Activate The Jam
 
 CIM Pattern is the **circuit breaker** for cognitive overload.
 
