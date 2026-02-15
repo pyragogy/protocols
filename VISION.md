@@ -204,7 +204,7 @@ Come build the cognitive operating system for the future.
 ## Contact & Community
 
 - **GitHub:** https://github.com/pyragogy/protocols
-- **Email:** protocols@pyragogy.org
+- **Email:** info@pyragogy.org
 - **Discord:** (coming soon)
 
 ---
