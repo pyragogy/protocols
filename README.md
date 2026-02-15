@@ -2,7 +2,6 @@
 
 > **Cognitive Impedance Mismatch** - Dynamic Mode Switching for AI-Augmented Teams
 
-<<<<<<< HEAD
 ---
 
 ## 👋 Before You Read This
